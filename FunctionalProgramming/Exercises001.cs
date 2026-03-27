@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,28 @@ namespace FunctionalProgramming
         //You can also use str.StartWith() and .EndWith() methods
         public static Func<string, string, int> SumIndices =
             (str1, str2) => str1.IndexOf('a') + str2.IndexOf('e');
-          
+
+
+        public static Predicate<string> IsValidDomain =
+            email => email.EndsWith("@northcoders.co.uk");
+        public static Predicate<string> IsValidUserName =
+            email => email.Split('@')[0].Length >= 5;
+        public const string ifValid =
+            "Email domain and user valid, please continue";
+        public const string ifnotValid =
+            "Email domain and user name invalid, please check your input";
+
+        public static string CheckValidEmail(string email)
+        {
+            bool isValidDomain = IsValidDomain(email);
+            bool isValidUserName = IsValidUserName(email);
+
+            if(isValidDomain && isValidUserName)
+            {
+                return ifValid;
+            }
+            return ifnotValid;
+        }
     }
 
 }

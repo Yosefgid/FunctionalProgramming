@@ -18,6 +18,9 @@
                 Console.WriteLine(result);
 
             });
+            string email = "yosefgidey@northcoders.co.uk";
+            Console.WriteLine(Exercises001.CheckValidEmail(email));
+
         }
     }
 }
