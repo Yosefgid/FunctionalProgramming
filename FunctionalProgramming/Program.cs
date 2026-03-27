@@ -1,10 +1,15 @@
 ﻿namespace FunctionalProgramming
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<int> numbers = new List<int> { 4, 15, 55, 78, 12 };
+            numbers.ForEach(num =>
+            {
+                int result = Exercises001.AddTen(num);
+                Console.WriteLine(result);
+            });
         }
     }
 }
