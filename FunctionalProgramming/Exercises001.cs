@@ -16,6 +16,11 @@ namespace FunctionalProgramming
         //
         public static Func<int, int> SquareIt = num => num * num;
         public static Func<int, int> AddTen = num => num + 10;
+        // now we move to the Predicate Type delegate Type
+        public static Predicate<string> GrammarCheck = 
+            str => str.Length > 0 && str[0] == 'A' && str[^1] == '!';
+        //You can also use str.StartWith() and .EndWith() methods
 
     }
+
 }
