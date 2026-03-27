@@ -20,7 +20,9 @@ namespace FunctionalProgramming
         public static Predicate<string> GrammarCheck = 
             str => str.Length > 0 && str[0] == 'A' && str[^1] == '!';
         //You can also use str.StartWith() and .EndWith() methods
-
+        public static Func<string, string, int> SumIndices =
+            (str1, str2) => str1.IndexOf('a') + str2.IndexOf('e');
+          
     }
 
 }
